@@ -31,7 +31,13 @@ class VoteController {
     public Map<String, Object> getConfig() throws SQLException {
         final Map<String, Object> config = new HashMap<>();
         try (final Connection conn = dataSource.getConnection()) {
-            config.put("persistentDb", !"H2".equals(conn.getMetaData().getDatabaseProductName()));
+            boolean persistentDb = !"H2".equals(conn.getMetaData().getDatabaseProductName());
+            config.put("persistentDb", persistentDb);
+            if (persistentDb) {
+                System.out.println("Postgresql DB is connected ");
+            } else {
+                System.out.println("Local database used -> front-end will say database is needed ");
+            }
         }
 
         return config;

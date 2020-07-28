@@ -1,8 +1,4 @@
 ---
 applications:
-  - name: thales-workshop
+  - name: voting-demo
     memory: 1G
-    instances: 1
-    path: target/demo-s1t-paris-0.0.1-SNAPSHOT.jar
-#    services:
-#     - postgresql-springone

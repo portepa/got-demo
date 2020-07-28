@@ -1,10 +1,10 @@
-/* @font-face {
-  font-family: proximanova;
-  src: url(../fonts/ProximaNova-Thin.otf);
-} */
+@font-face {
+  font-family: montserrat;
+  src: url(../fonts/Montserrat-Light.ttf);
+}
 
 h1 {
-  font-family: /*proximanova,*/ sans-serif;
+  font-family: montserrat, sans-serif;
 }
 
 html, body {
@@ -36,7 +36,7 @@ html, body {
 .left {
   float:left;
   /* background-color: red; */
-  background-color: rgba(0, 181, 163, 0.7);
+  background-color: rgba(0, 181, 163, 0.5);
   border-right: solid white 6px;
 }
 
@@ -56,7 +56,7 @@ html, body {
 
 .hero-full-screen {
   height: 100vh;
-  background: url("/img/standup.jpg") center center no-repeat;
+  background: url("/img/tanzu-zoom-background-light.png") center center no-repeat;
   background-size: cover;
 }
 

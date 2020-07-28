@@ -1,8 +1,0 @@
----
-applications:
-  - name: tas-demo-dry
-    memory: 1G
-    instances: 1
-    path: target/demo-s1t-paris-0.0.1-SNAPSHOT.jar
-    services:
-     - tas-dry-run
