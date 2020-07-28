@@ -37,6 +37,7 @@ class VoteController {
                 System.out.println("Postgresql DB is connected ");
             } else {
                 System.out.println("Local database used -> front-end will say database is needed ");
+                System.out.println(conn.getMetaData().getDatabaseProductName() + " used");
             }
         }
 
