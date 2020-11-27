@@ -2,5 +2,4 @@
 applications:
   - name: java-app
     memory: 1G
-    path: target/votingapp-0.0.1-SNAPSHOT.jar
     buildpack: tanzu-buildpacks/java
