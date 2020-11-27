@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: voting-app
+  name: voting-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: voting-app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: voting-app
+    spec:
+      containers:
+      - image: gcr.io/pa-pporte/tas-app-images/5f59d736-351c-4775-83a4-9c7e38835fc4@sha256:444e5fe227a374923705b55ab0779af293ce2e22fc01142acc397f5f2c184d77
+        name: voting-app
+        resources: {}
+        env:
+          - name: DATABASE_URL
+            # value: jdbc:postgresql://postgresql.default.svc.cluster.local:5432/postgres?user=postgres&password=IbgMmq0pX5&ssl=false
+            value: postgres://postgres:IbgMmq0pX5@postgresql.default.svc.cluster.local:5432/postgres?reconnect=true
+          - name: VCAP_SERVICES
+            value: '{"postgresql":[{ "credentials": { "jdbcUrl": "jdbc:postgresql://postgresql.default.svc.cluster.local:5432/postgres?user=postgres&password=IbgMmq0pX5&ssl=false" }}]}'
+
+status: {}
